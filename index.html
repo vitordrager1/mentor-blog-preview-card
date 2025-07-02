@@ -14,7 +14,10 @@
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-
+    p{
+      margin: 0;
+      height: fit-content;
+    }
     body{
       font-family: "figtree";
       background-color: hsl(47, 88%, 63%);
@@ -27,44 +30,82 @@
     }
     .card{
       background-color: hsl(0, 0%, 100%);
-      border: 10px;
-      border-color: hsl(0, 0%, 7%);
       border-radius: 20px;
       display: flex;
       flex-direction: column;
-      align-items: start;
-      width: 384px;
-      height: 522px;
-      padding: 24px;
-      font-weight: 500;
-      color: hsl(0, 0%, 7%);
+      width: 360px;
+      height: fit-content;
+      padding: 24px; 
+      gap: 24px;
+      border: 1px solid hsl(0, 0%, 7%);
+      border-right: 8px solid black;
+      border-bottom: 8px solid black;
     }
     .img{
       width: 100%;
     }
+
+    .content{
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
     .category{
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 150%;
+      letter-spacing: 0px;
+      padding: 4px 12px;
       background-color: hsl(47, 88%, 63%);
       border-radius: 4px;
-      padding-right: 12px;
-      padding-left: 12px;
+      width: fit-content;
     }
-    .category h1{
-      font-weight: 800;
-      color: hsl(0, 0%, 7%);
-      font-size: 16px;
+
+    .date{
+      font-size: 14px;
+      line-height: 150%;
+      letter-spacing: 0px;
+      font-weight: 500;
     }
+
     .title{
       color: hsl(0, 0%, 7%);
       font-weight: 800;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0px;
     }
     .description{
       color: hsl(0, 0%, 42%);
+      font-size: 16px;
+      line-height: 150%;
+      letter-spacing: 0px;
+      font-weight: 500;
     }
     .author{
       display: flex;
       align-items: center;
-      color: hsl(0, 0%, 7%);
+      gap: 12px;
+    }
+    .author p{
+      font-size: 14px;
       font-weight: 800;
+      line-height: 150%;
+      letter-spacing: 0px;
+    }
+
+    .card:hover .title {
+      color: hsl(47, 88%, 63%);
+    }
+    .card:hover {
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
+      .card{
+        width: 303px;
+      }
     }
   </style>
 </head>
@@ -72,21 +113,23 @@
 
   <div class="card">
     <div class="img">
-      <img style="border-radius: 10px;" width="100%" src="assets/images/illustration-article.svg" alt="web img">
+      <img style="width: 100%; border-radius: 10px;" src="assets/images/illustration-article.svg" alt="web img">
     </div>
-    <div class="category">
-      <h1>Learning</h1>
-    </div>
-    <p>Published 21 Dec 2023</p>
-    <div class="title">
-      <h1>HTML & CSS foundations</h1>
-    </div>
-    <div class="description">
-      These languages are the backbone of every website, defining structure, content, and presentation.
+
+    <div class="content">
+
+      <p class="category">Learning</p>
+      
+      <p class="date">Published 21 Dec 2023</p>
+      
+      <p class="title">HTML & CSS foundations</p>
+      
+      <p class="description">These languages are the backbone of every website, defining structure, content, and presentation.</p>
+      
     </div>
     <div class="author">
-      <img src="assets/images/image-avatar.webp" alt="author avatar">
-      Greg Hooper
+      <img width="32px" height="32" src="assets/images/image-avatar.webp" alt="author avatar">
+      <p>Greg Hooper</p>
     </div>
 
   </div>
